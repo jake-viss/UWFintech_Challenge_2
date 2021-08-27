@@ -7,6 +7,8 @@ This contains a helper function for loading and saving CSV files.
 import csv
 from pathlib import Path
 
+import questionary
+
 def load_csv(csvpath):
     """Reads the CSV file from path provided.
 
@@ -41,12 +43,24 @@ def save_qualifying_loans(qualifying_loans):
     header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
     # Header row includes: Lender,Max Loan Amount,Max LTV,Max DTI,Min Credit Score,Interest Rate
     
-    csvpath = Path("qualifying_loans.csv")
-    with open(csvpath, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
+    # Asks the user if they would like to save their file.
+    save_file = questionary.text("Would you like to save the list of your qualifying loans?").ask()
+    
+    # If the user chooses Yes, writes the list to a new csv file of the users chosen path.
+    if save_file == str("Yes"):
 
-        # Write the header row
-        csvwriter.writerow(header)
-        # Write the data rows
-        for row in qualifying_loans:
-            csvwriter.writerow(row)
+        csvpath = questionary.text("Please enter a file path to save your qualifying loans sheet (.csv):").ask()
+        csvpath = Path(csvpath)
+
+        with open(csvpath, 'w', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+
+            # Write the header row
+            csvwriter.writerow(header)
+            # Write the data rows
+            for row in qualifying_loans:
+                csvwriter.writerow(row)
+    # Otherwise, gives an exit message.       
+    else:
+        print("Thank you for using the loan qualifier app. You've chosen not to save a file of your qualifying loans.")
+
