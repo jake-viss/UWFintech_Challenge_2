@@ -119,9 +119,11 @@ def run():
     qualifying_loans = find_qualifying_loans(
         bank_data, credit_score, debt, income, loan_amount, home_value
     )
-
+    if len(qualifying_loans) > 0:
     # Save qualifying loans
-    qualifier.utils.fileio.save_qualifying_loans(qualifying_loans)
+        qualifier.utils.fileio.save_qualifying_loans(qualifying_loans)
+    else:
+        sys.exit("You do not qualify for any loans.")
 
 
 if __name__ == "__main__":
