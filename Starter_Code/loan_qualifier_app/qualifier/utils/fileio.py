@@ -44,10 +44,10 @@ def save_qualifying_loans(qualifying_loans):
     # Header row includes: Lender,Max Loan Amount,Max LTV,Max DTI,Min Credit Score,Interest Rate
     
     # Asks the user if they would like to save their file.
-    save_file = questionary.text("Would you like to save the list of your qualifying loans?").ask()
+    save_file = questionary.confirm("Would you like to save the list of your qualifying loans?").ask()
     
-    # If the user chooses Yes, writes the list to a new csv file of the users chosen path.
-    if save_file == str("Yes"):
+    # If the confirm above is true, writes the list to a new csv file of the users chosen path.
+    if save_file == True:
 
         csvpath = questionary.text("Please enter a file path to save your qualifying loans sheet (.csv):").ask()
         csvpath = Path(csvpath)
