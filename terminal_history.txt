@@ -1,0 +1,50 @@
+  538  git push
+  539  clear
+  540  pip import fire
+  541  pip install fire
+  542  pip install questionary
+  543  cd
+  544  cd Downloads/
+  545  ls
+  546  clear
+  547  cd
+  548  cd Desktop/github_upload/UWFintech_Challenge_2/
+  549  ls
+  550  cd Starter_Code/loan_qualifier_app/
+  551  ls
+  552  clear
+  553  python app.py
+  554  git status
+  555  git add .
+  556  git status
+  557  git commit -m "Updated README file"
+  558  git push
+  559  git pull
+  560  cd
+  561  cd Desktop/github_upload/UWFintech_Challenge_2/
+  562  ls
+  563  cd Starter_Code/
+  564  ls
+  565  cd loan_qualifier_app/
+  566  ls
+  567  mv README.md /Users/jacob/Desktop/github_upload/UWFintech_Challenge_2/
+  568  ls
+  569  cd ..
+  570  cd ..
+  571  ls
+  572  git status
+  573  cd Starter_Code
+  574  ls
+  575  cd loan_qualifier_app/
+  576  ls
+  577  mv Images /Users/jacob/Desktop/github_upload/UWFintech_Challenge_2/
+  578  ls
+  579  cd
+  580  cd Desktop/github_upload/UWFintech_Challenge_2/
+  581  ls
+  582  git status
+  583  git add .
+  584  git status
+  585  git commit -m "Rearranged folder structure so README is in main folder"
+  586  git push
+  587  history 50 > terminal_history.txt
